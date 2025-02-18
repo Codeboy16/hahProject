@@ -1,0 +1,3 @@
+Tailwind css Installed
+boostrap is Also Added
+Remix Icon is Added == https://remixicon.com/
