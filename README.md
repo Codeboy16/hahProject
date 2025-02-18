@@ -1,4 +1,4 @@
-#Job Profile Finder
+# Job Profile Finder
 
 This project is a collaborative effort between me and my team member, aimed at helping users find job profiles that match their interests. The project features a user authentication system with sign-up and login functionalities. After logging in, users can explore personalized job profiles that align with their career interests and skills.
 
