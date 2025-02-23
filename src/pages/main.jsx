@@ -9,6 +9,7 @@ function Main() {
     <div>
         <Header/>
         <h1 className='text-center text-4xl py-4 font-medium'>Main Page Section</h1>
+        <h1 className='text-center underline'> I Am Saniyaa Who Is Coding</h1>
     </div>
   )
 }
