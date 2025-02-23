@@ -3,8 +3,26 @@ import { Link } from 'react-router-dom'
 import logo from "../../public/images/logo.png"
 function SignUp() {
   useEffect(() => { 
-    document.title = "Sign Up - My App";
+    document.title = "Sign Up";
   }, [])
+  // const submitHandler = async (e) => {
+  //   e.preventDefault()
+  //   const username = e.target.username.value;
+  //   const email = e.target.email.value;
+  //   const password = e.target.password.value;
+  //   const data = new FormData(username,email,password)
+  //   const response = await fetch('http://127.0.0.1:8000/register/', {
+  //     method: 'POST',
+  //     body: data
+  //   })
+  //   const result = await response.json()
+  //   if (result.status === 'success') {
+  //     alert('User registered successfully')
+  //     form.reset()
+  //   } else {
+  //     alert('An error occurred')
+  //   }
+  // }
   return (
     <div className='bgColor h-screen w-full flex justify-center items-center'>
        <div className='bg-white rounded-xl w-96 md:w-1/2 m-auto my-auto mt-20 flex justify-around p-4'>
