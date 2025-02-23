@@ -1,6 +1,9 @@
 .bgColor{
     background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
+.bgColor1{
+    background: linear-gradient(-135deg, #352fe4, #bc2546);
+}
 .noUnderline{
     text-decoration: none;
 }
