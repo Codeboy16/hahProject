@@ -34,9 +34,12 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid black;
-    background-color: #006BC2;
+    /* border: 2px solid black; */
+    background-color:#0565c8;
     padding: 20px;;
+    color: #ffffff;
+    font-size: larger;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .postBtn{
     display: flex;
@@ -45,6 +48,23 @@
    
    
 }
+.jobPostBtns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.jobPostBtns button{
+     padding: 10px;
+     border: 2px solid #eeeeee;
+     color: #ffffff;
+     border-radius: 10px;
+}
+.postBtn1{
+    background-color: green;
+}
+.cancleBtn{
+    background-color: red;
+}
 .postBtn button{
     background-color: orange;
     padding: 20px;
@@ -52,17 +72,30 @@
     margin-top: 10px;
 
 }
+.body{
+    background-color: #fafafa;
+}
 .oldJob{
-    border: 2px solid black;
-    margin-left: 40px;
-    margin-right: 40px;
-    margin-bottom: 10px;
+    border: 2px solid #eeeeee;
+    /* margin-left: 40px;
+    margin-right: 40px; */
+    /* margin-bottom: 10px; */
+    gap: 20px;
     border-radius: 10px;
     padding: 20px;
+    height: 300px;
+    width: 300px;
+    background-color: #ffffff;
 }
-.oldJob:hover{
+/* .oldJob:hover{
     background-color: red;
-}
+} */
+ input{
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding-left: 10px;
+ }
 .pp{
     display: flex;
     justify-content: center;
@@ -73,11 +106,27 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 3px solid #eeeeee;
+    padding: 20px;
+    border-radius: 10px;
    
 }
 .newJob input{
     border: 1px solid black;
 }
+.np{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .newJob{
     display: none;
+}
+.oldJobs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
 }

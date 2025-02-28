@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PocJob from '../components/pocJob';
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 
 const Poc = () => {
   useEffect(() => {   

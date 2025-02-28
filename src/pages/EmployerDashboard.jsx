@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import '../index.css'
+import Footer from '../components/footer';
 const EmployerDashboard = () => {
   const [jobs, setJobs] = useState([
     { id: 1, title: "Software Engineer", company: "Google", location: "Mountain View, CA", description: "Develop scalable web applications." },
@@ -24,6 +25,10 @@ const EmployerDashboard = () => {
     document.querySelector(".newJob").style.display = "block";
     document.querySelector(".postBtn").style.display = "none";
   };
+  const cancle=()=>{
+    document.querySelector(".newJob").style.display = "none";
+    document.querySelector(".postBtn").style.display = "block";
+  }
 
   const addTheJob = () => {
     if (newJob.title && newJob.company && newJob.description) {
@@ -37,11 +42,11 @@ const EmployerDashboard = () => {
   };
 
   return (
-    <>
+    < div className="body">
     <div className="empDetails">
-      <div>empname</div>
-      <div>empCompany</div>
-      <div>email</div>
+      <div>Mohammad Soheb</div>
+      <div>Google</div>
+      <div>sohebmohammadd@gmail.com</div>
     </div>
 
     <div className="postBtn">
@@ -63,8 +68,15 @@ const EmployerDashboard = () => {
       <input type="text" value={newJob.description} onChange={(e) => setNewJob({ ...newJob, description: e.target.value })} />
       <br />
       <br />
+      <label>Location</label>
+      <input type="text" value={newJob.location} onChange={(e) => setNewJob({ ...newJob, location: e.target.value })} />
+      <br />
+      <br />
+      <div className="jobPostBtns">
+      <button  className="postBtn1"onClick={addTheJob}>Post</button>
+      <button className="cancleBtn" onClick={cancle}>Cancle</button>
+      </div>
       
-      <button onClick={addTheJob}>Add</button>
     </div>
 </div>
     
@@ -83,7 +95,8 @@ const EmployerDashboard = () => {
         </div>
       ))}
     </div>
-  </>
+    <Footer></Footer>
+  </div>
   )
 }
 

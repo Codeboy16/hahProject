@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Main from "./pages/main";
 import Employee from "./pages/EmployerDashboard";
 import Poc from "./pages/Poc";
+import EmployerDashboard from "./pages/EmployerDashboard";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
@@ -17,7 +18,7 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
     <Routes>
       <Route path="/" element={<Main/>}></Route>
       <Route path="/login" element={<Login login={login}/>}></Route>
@@ -25,7 +26,9 @@ function App() {
       <Route path="/employee" element={isAuthenticated ? <Employee logout={logout} /> : <Navigate to="/login" />}></Route>
       <Route path="/poc" element={<Poc/>}></Route>
     </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <EmployerDashboard></EmployerDashboard>
+
     </>
   )
 }
