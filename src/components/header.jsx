@@ -3,7 +3,6 @@ import Clogo from '../../public/images/cLogo.png';
 import {Link} from 'react-router-dom';
 function Header(){
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -19,8 +18,9 @@ function Header(){
       </div>
       <div className='md:flex justify-between hidden '>
         <input type='search' placeholder='Search' className='border-2 border-white rounded-lg my-auto px-3 py-1 outline-none'/>
-      <Link to='/login' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2 rounded-lg border'>Login</Link>
-      <Link to='/signup' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-1 border rounded-lg '>SignUp</Link>
+              <Link to='/login' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2 rounded-lg border'>Login</Link>
+              <Link to='/signup' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-1 border rounded-lg '>SignUp</Link>
+
       </div>
       <button className='md:hidden text-3xl text-white' onClick={toggleMenu}>
           <i className={`ri-menu-line text-3xl ${isMenuOpen ? 'hidden' : 'block'}`}></i>

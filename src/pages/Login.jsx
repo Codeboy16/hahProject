@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../public/images/logo.png";
 
-function Login() {
+function Login({ login }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+
   useEffect(() => {
     document.title = "Login";
   }, []);
@@ -14,27 +15,25 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-<<<<<<< HEAD
     // Email validation (sanitize to allow only valid email format)
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-=======
-    // Email validation (sanitize to allow only valid email format and prevent special characters)
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const specialCharEmailRegex = /[^\w\s@._%-+.-]/; // Special characters in email
+
+    // Check for special characters in email
+    const specialCharEmailRegex = /[^\w\s@._%-+.-]/; 
     if (specialCharEmailRegex.test(email)) {
       setError("Email should not contain special characters.");
       return;
     }
->>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
+
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email.");
       return;
     }
     
     // Password validation (min 8 and max 16 characters, no special characters)
-    const passwordSpecialCharRegex = /[^a-zA-Z0-9]/; // Special characters in password
+    const passwordSpecialCharRegex = /[^a-zA-Z0-9]/; 
     if (password.length < 8 || password.length > 16) {
-      setError("Password should be between 8 and 16 characters.");
+      setError("Invalid Password 8 and 16 characters.");
       return;
     }
     if (passwordSpecialCharRegex.test(password)) {
@@ -47,19 +46,14 @@ function Login() {
     
     // Here, you can handle the form submission (e.g., call an API to log in)
     console.log("Form submitted with:", { email, password });
+    login(); // Call the login function passed as a prop from App.jsx
   };
 
   return (
     <div className='bgColor1 h-screen w-full flex justify-center items-center'>
-<<<<<<< HEAD
       <div className='bg-white rounded-xl w-96 md:w-1/2 m-auto my-auto mt-20 flex justify-around p-5'>
         <div className='my-auto hidden lg:flex'>
           <img src={logo} className='my-auto hidden lg:flex' alt="Logo" />
-=======
-      <div className='bg-white rounded-xl w-96 md:w-1/2 m-auto my-auto mt-20 flex justify-around p-4'>
-        <div className='my-auto hidden lg:flex'>
-          <img src={logo} className='my-auto hidden lg:flex' />
->>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
         </div>
         <div className=''>
           <h1 className='text-2xl font-bold'>Login</h1>
@@ -70,32 +64,33 @@ function Login() {
               placeholder='Enter The Email'
               className='w-72 border my-2 rounded-md px-3 py-2 text-2xl text-black'
               value={email}
-<<<<<<< HEAD
               onChange={(e) => {
                 setEmail(e.target.value);
                 setError(''); // Clear error on input change
               }}
-=======
-              onChange={(e) => setEmail(e.target.value)}
->>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
               required
             />
-            <input
-              type="password"
-              name="password"
-              placeholder='Enter The Password'
-              className='w-72 border my-2 rounded-md px-3 py-2 text-2xl text-black'
-              value={password}
-<<<<<<< HEAD
-              onChange={(e) => {
-                setPassword(e.target.value);
-                setError(''); // Clear error on input change
-              }}
-=======
-              onChange={(e) => setPassword(e.target.value)}
->>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
-              required
-            />
+            <div className='relative'>
+              <input
+                type={showPassword ? "text" : "password"} // Toggle password visibility
+                name="password"
+                placeholder='Enter The Password'
+                className='w-72 border my-2 rounded-md px-3 py-2 text-2xl text-black'
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  setError(''); // Clear error on input change
+                }}
+                required
+              />
+              <button
+                type="button"
+                className='absolute right-4 top-4 text-gray-500'
+                onClick={() => setShowPassword(!showPassword)} // Toggle visibility
+              >
+                {showPassword ? <i class="ri-eye-off-line "></i> : <i class="ri-eye-line"></i>}
+              </button>
+            </div>
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <button type="submit" className='btn btn-primary my-2'>Submit</button>
           </form>
