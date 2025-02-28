@@ -1,3 +1,10 @@
 Tailwind css Installed
 boostrap is Also Added
 Remix Icon is Added == https://remixicon.com/
+
+
+
+//To push the code in the github
+// 1 git add .
+// 2 git commit -m "commit message"
+// 3 git push -u origin main
