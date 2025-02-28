@@ -14,8 +14,18 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
+<<<<<<< HEAD
     // Email validation (sanitize to allow only valid email format)
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+=======
+    // Email validation (sanitize to allow only valid email format and prevent special characters)
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const specialCharEmailRegex = /[^\w\s@._%-+.-]/; // Special characters in email
+    if (specialCharEmailRegex.test(email)) {
+      setError("Email should not contain special characters.");
+      return;
+    }
+>>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email.");
       return;
@@ -41,9 +51,15 @@ function Login() {
 
   return (
     <div className='bgColor1 h-screen w-full flex justify-center items-center'>
+<<<<<<< HEAD
       <div className='bg-white rounded-xl w-96 md:w-1/2 m-auto my-auto mt-20 flex justify-around p-5'>
         <div className='my-auto hidden lg:flex'>
           <img src={logo} className='my-auto hidden lg:flex' alt="Logo" />
+=======
+      <div className='bg-white rounded-xl w-96 md:w-1/2 m-auto my-auto mt-20 flex justify-around p-4'>
+        <div className='my-auto hidden lg:flex'>
+          <img src={logo} className='my-auto hidden lg:flex' />
+>>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
         </div>
         <div className=''>
           <h1 className='text-2xl font-bold'>Login</h1>
@@ -54,10 +70,14 @@ function Login() {
               placeholder='Enter The Email'
               className='w-72 border my-2 rounded-md px-3 py-2 text-2xl text-black'
               value={email}
+<<<<<<< HEAD
               onChange={(e) => {
                 setEmail(e.target.value);
                 setError(''); // Clear error on input change
               }}
+=======
+              onChange={(e) => setEmail(e.target.value)}
+>>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
               required
             />
             <input
@@ -66,10 +86,14 @@ function Login() {
               placeholder='Enter The Password'
               className='w-72 border my-2 rounded-md px-3 py-2 text-2xl text-black'
               value={password}
+<<<<<<< HEAD
               onChange={(e) => {
                 setPassword(e.target.value);
                 setError(''); // Clear error on input change
               }}
+=======
+              onChange={(e) => setPassword(e.target.value)}
+>>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
               required
             />
             {error && <p className="text-red-500 text-sm">{error}</p>}

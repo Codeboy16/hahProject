@@ -11,6 +11,7 @@ function Main() {
   return (
     <div>
         <Header/>
+<<<<<<< HEAD
         {/* Main Section */}
         <div className='h-full'>
           <h1 className='kanit-bold text-center pt-5 text-4xl'>Make your dream career a reality</h1>
@@ -61,6 +62,10 @@ function Main() {
        </div>
         </div>
         <Footer/>
+=======
+        <h1 className='text-center text-4xl py-4 font-medium'>Main Page Section</h1>
+        <h1 className='text-center underline'> HELLO EVERYONE <></></h1>
+>>>>>>> e6351e017c279d9380e48397b18c1df374a1cc0b
     </div>
   )
 }
