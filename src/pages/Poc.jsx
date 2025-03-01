@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PocJob from '../components/pocJob';
 import Footer from '../components/footer';
+import { redirect } from 'react-router-dom';
 
 const Poc = () => {
   useEffect(() => {   
@@ -30,6 +31,7 @@ const Poc = () => {
 
   const handleLogout = () => {
     alert('You have been logged out.');
+    redirect('/login');
     // Add your logout logic here (e.g., redirect to login page)
   };
 
@@ -50,11 +52,30 @@ const Poc = () => {
         </button>
       </header>
 
+
+
+      {/* Show Summary Data */}
+      <div className="container mx-auto mt-6">
+        <div className="bg-white rounded-lg border shadow-sm p-6">
+          <h2 className="text-2xl font-semibold mb-4 text-center">Summary</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-blue-100 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300">
+              <p className="text-gray-800 text-xl"><strong>Total Applications:</strong> {totalApplications}</p>
+            </div>
+            <div className="bg-green-100 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300">
+              <p className="text-gray-800 text-xl"><strong>Applications Accepted:</strong> {acceptedApplications}</p>
+            </ div>
+            <div className="bg-red-100 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300">
+              <p className="text-gray-800 text-xl"><strong>Applications Rejected:</strong> { rejectedApplications}</p>
+            </div>
+          </div>
+        </div> 
+      </div>
       {/* Position Filter Buttons */}
-      <div className="container mx-auto mt-6 flex justify-center space-x-4 rounded-sm">
+      <div className="container mx-auto mt-3 flex justify-center space-x-4 rounded font-medium">
         <button 
           onClick={() => setSelectedPosition('All')} 
-          className={`py-2 px-4 rounded-lg ${selectedPosition === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'} transition duration-200`}
+          className={`py-3 px-4 rounded-lg ${selectedPosition === 'All' ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'} transition duration-200`}
         >
           All
         </button>
@@ -77,25 +98,6 @@ const Poc = () => {
           Mobile Development
         </button>
       </div>
-
-      {/* Show Summary Data */}
-      <div className="container mx-auto mt-6">
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-2xl font-semibold mb-4 text-center">Summary</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-blue-100 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300">
-              <p className="text-gray-800 text-xl"><strong>Total Applications:</strong> {totalApplications}</p>
-            </div>
-            <div className="bg-green-100 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300">
-              <p className="text-gray-800 text-xl"><strong>Applications Accepted:</strong> {acceptedApplications}</p>
-            </ div>
-            <div className="bg-red-100 p-4 rounded-lg shadow hover:shadow-xl transition-shadow duration-300">
-              <p className="text-gray-800 text-xl"><strong>Applications Rejected:</strong> { rejectedApplications}</p>
-            </div>
-          </div>
-        </div> 
-      </div>
-
       {/* Show The Candidates Who Applied for the Job */}
       <div className="container flex flex-wrap justify-center mx-auto mt-6 mb-5">
         {filteredUsers.map((user, index) => (

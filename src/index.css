@@ -30,6 +30,10 @@
     color: rgb(96, 95, 95);
     font-size: medium;
 }
+::-webkit-scrollbar{
+    width: 0px;
+}
+/* Soheb Css */
 .empDetails{
     display: flex;
     justify-content: space-evenly;

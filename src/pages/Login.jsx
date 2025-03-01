@@ -69,7 +69,8 @@ function Login({ login }) {
                 setError(''); // Clear error on input change
               }}
               required
-            />
+            />     
+
             <div className='relative'>
               <input
                 type={showPassword ? "text" : "password"} // Toggle password visibility

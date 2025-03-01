@@ -3,7 +3,6 @@ import { BrowserRouter, Routes,Route,Router,Navigate } from "react-router-dom";
 import  Login  from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Main from "./pages/main";
-import Employee from "./pages/EmployerDashboard";
 import Poc from "./pages/Poc";
 import EmployerDashboard from "./pages/EmployerDashboard";
 function App() {
@@ -18,16 +17,16 @@ function App() {
   };
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
     <Routes>
       <Route path="/" element={<Main/>}></Route>
       <Route path="/login" element={<Login login={login}/>}></Route>
       <Route path="/signup" element={<SignUp/>}></Route>
-      <Route path="/employee" element={isAuthenticated ? <Employee logout={logout} /> : <Navigate to="/login" />}></Route>
+      <Route path="/employee" element={<EmployerDashboard/>}></Route>
+      <Route path="/poc" element={<Poc/>}></Route>
       <Route path="/poc" element={<Poc/>}></Route>
     </Routes>
-    </BrowserRouter> */}
-    <EmployerDashboard></EmployerDashboard>
+    </BrowserRouter>
 
     </>
   )
