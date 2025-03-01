@@ -65,9 +65,17 @@
 }
 .postBtn1{
     background-color: green;
+    width: 100px;
 }
-.cancleBtn{
+.logout{
     background-color: red;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.cancelBtn{
+    background-color: red;
+    width: 100px;
 }
 .postBtn button{
     background-color: orange;
@@ -89,7 +97,7 @@
     padding: 20px;
     height: 300px;
     width: 300px;
-    background-color: #ffffff;
+    background-color: #cbf2ff;
 }
 /* .oldJob:hover{
     background-color: red;
@@ -111,8 +119,10 @@
     align-items: center;
     flex-direction: column;
     border: 3px solid #eeeeee;
-    padding: 20px;
+    padding: 50px;
     border-radius: 10px;
+    background-color: #fffbf2;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    
 }
 .newJob input{
