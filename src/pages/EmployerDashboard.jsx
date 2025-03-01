@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../index.css';
+import '../index.css'; 
 import Footer from '../components/footer';
 
 const EmployerDashboard = () => {
@@ -41,60 +41,67 @@ const EmployerDashboard = () => {
   };
 
   return (
-    <div className="body">
-      <div className="empDetails">
-        <div>Mohammad Soheb</div>
-        <div>Google</div>
-        <div>sohebmohammadd@gmail.com</div>
+    <div className="dashboard-container">
+      <header className="header">
+        <h1 className="header-title">Employer Dashboard</h1>
         <button className="logout">Logout</button>
-      </div>
+      </header>
 
-      <div className="postBtn">
-        <button onClick={postAJob}>Post New Job</button>
-      </div>
+      <div className="dashboard-content">
+        <aside className="sidebar">
+          <nav>
+            <ul>
+              <li><a href="#jobs" className="active">Job Posts</a></li>
+              <li><a href="#profile">Profile</a></li>
+              <li><a href="#settings">Settings</a></li>
+            </ul>
+          </nav>
+        </aside>
 
-      <div className="np">
-        <div className="newJob">
-          <label>Job Title</label>
-          <input placeholder='Enter the job title' type="text" value={newJob.title} onChange={(e) => setNewJob({ ...newJob, title: e.target.value })} />
-          <br /><br />
-
-          <label>Company Name</label>
-          <input placeholder="Enter the company name"type="text" value={newJob.company} onChange={(e) => setNewJob({ ...newJob, company: e.target.value })} />
-          <br /><br />
-
-          <label>Description</label>
-          <textarea placeholder='Enter the job description' type="text" value={newJob.description} onChange={(e) => setNewJob({ ...newJob, description: e.target.value })} />
-          <br /><br />
-
-          <label>Location</label>
-          <input placeholder='Enter the location' type="text" value={newJob.location} onChange={(e) => setNewJob({ ...newJob, location: e.target.value })} />
-          <br /><br />
-          <label>Date</label>
-          <input placeholder="Enter the Date"type="date" value={newJob.dateOfPosted} onChange={(e) => setNewJob({ ...newJob, dateOfPosted: e.target.value })} />
-          <br /><br />
-
-          <div className="jobPostBtns">
-            <button className="postBtn1" onClick={addTheJob}>Post</button>
-            <button className="cancelBtn" onClick={cancel}>Cancel</button>
+        <main className="main-content">
+          <div className="empDetails">
+            <h2>Welcome, Mohammad Soheb</h2>
+            <p>Company: Google</p>
+            <p>Email: sohebmohammadd@gmail.com</p>
           </div>
-        </div>
-      </div>
 
-      <div className="pp">
-        <h3>Previous Job Posts</h3>
-      </div>
-
-      <div className="oldJobs">
-        {jobs.map((job) => (
-          <div className="oldJob" key={job.id}>
-            <div><b>Title: </b>{job.title}</div>
-            <div><b>Company: </b>{job.company}</div>
-            <div><b>Location: </b>{job.location}</div>
-            <div><b>Description: </b>{job.description}</div>
-            <div><b>Date Posted: </b>{job.dateOfPosted}</div>
+          <div className="postBtn">
+            <button onClick={postAJob} className="btn">Post New Job</button>
           </div>
-        ))}
+
+          <div className="newJob">
+            <h3>Post a New Job</h3>
+            <label>Job Title</label>
+            <input placeholder='Enter the job title' type="text" value={newJob.title} onChange={(e) => setNewJob({ ...newJob, title: e.target.value })} />
+            
+            <label>Company Name</label>
+            <input placeholder="Enter the company name" type="text" value={newJob.company} onChange={(e) => setNewJob({ ...newJob, company: e.target.value })} />
+            
+            <label>Description</label>
+            <textarea placeholder='Enter the job description' value={newJob.description} onChange={(e) => setNewJob({ ...newJob, description: e.target.value })} />
+            
+            <label>Location</label>
+            <input placeholder='Enter the location' type="text" value={newJob.location} onChange={(e) => setNewJob({ ...newJob, location: e.target.value })} />
+            
+            <div className="jobPostBtns">
+              <button className="btn" onClick={addTheJob}>Post</button>
+              <button className="cancelBtn" onClick={cancel}>Cancel</button>
+            </div>
+          </div>
+
+          <div className="previousJobs">
+            <h3>Previous Job Posts</h3>
+            {jobs.map((job) => (
+              <div className="oldJob" key={job.id}>
+                <h4>{job.title}</h4>
+                <p><b>Company:</b> {job.company}</p>
+                <p><b>Location:</b> {job.location}</p>
+                <p><b>Description:</b> {job.description}</p>
+                <p><b>Date Posted:</b> {job.dateOfPosted}</p>
+              </div>
+            ))}
+          </div>
+        </main>
       </div>
 
       <Footer />

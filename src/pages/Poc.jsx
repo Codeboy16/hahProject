@@ -53,7 +53,6 @@ const Poc = () => {
       </header>
 
 
-
       {/* Show Summary Data */}
       <div className="container mx-auto mt-6">
         <div className="bg-white rounded-lg border shadow-sm p-6">
@@ -103,8 +102,7 @@ const Poc = () => {
         {filteredUsers.map((user, index) => (
           <PocJob key={index} user={user} handleAccept={handleAccept} handleReject={handleReject} />
         ))}
-      </div>
-
+      </div> 
       {/* Footer Section */}
       <footer className="mt-6">
         <hr className="my-6" />

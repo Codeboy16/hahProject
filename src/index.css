@@ -34,11 +34,7 @@
     width: 0px;
 }
 /* Soheb Css */
-.empDetails{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* border: 2px solid black; */
+/* .empDetails{
     background-color:#0565c8;
     padding: 20px;;
     color: #ffffff;
@@ -89,9 +85,6 @@
 }
 .oldJob{
     border: 2px solid #eeeeee;
-    /* margin-left: 40px;
-    margin-right: 40px; */
-    /* margin-bottom: 10px; */
     gap: 20px;
     border-radius: 10px;
     padding: 20px;
@@ -99,9 +92,6 @@
     width: 300px;
     background-color: #cbf2ff;
 }
-/* .oldJob:hover{
-    background-color: red;
-} */
  input{
     border: 1px solid #eeeeee;
     border-radius: 5px;
@@ -143,4 +133,185 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
-}
+} */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-title {
+    font-size: 24px;
+  }
+  
+  .logout {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logout:hover {
+    background-color: #e63939;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar nav ul li a:hover,
+  .sidebar nav ul li a.active {
+    background-color: #007bff;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  .empDetails {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .empDetails h2 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .postBtn {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .newJob {
+    display: none;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .newJob label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .newJob input,
+  .newJob textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .jobPostBtns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cancelBtn {
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cancelBtn:hover {
+    background-color: #e6b800;
+  }
+  
+  .previousJobs {
+    margin-top: 20px;
+  }
+  
+  .oldJob {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .oldJob:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .oldJob h4 {
+    margin: 0 0 5px;
+    color: #333;
+  }
+  
+  .oldJob p {
+    margin: 5px 0;
+    color: #666;
+  }
+  
