@@ -1,7 +1,12 @@
 import React,{useState} from 'react'
 import Clogo from '../../public/images/cLogo.png';
 import {Link} from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
+
 function Header(){
+  //Auth0 api
+  const { user, isAuthenticated,logout } = useAuth0();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -18,9 +23,25 @@ function Header(){
       </div>
       <div className='md:flex justify-between hidden '>
         <input type='search' placeholder='Search' className='border-2 border-white rounded-lg my-auto px-3 py-1 outline-none'/>
-              <Link to='/login' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2 rounded-lg border'>Login</Link>
-              <Link to='/signup' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-1 border rounded-lg '>SignUp</Link>
+        {
+  isAuthenticated ? (
+    <>
+    <p className='px-2'>{user.name}</p>
+      <button className='btn bg-red-500 mx-2' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</button>
+    </>
+  ) : (
+    <>
+      <Link to='/login' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2 rounded-lg border'>
+        Login
+      </Link>
+      <Link to='/signup' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-1 border rounded-lg'>
+        SignUp
+      </Link>
+    </>
+  )
+}
 
+             
       </div>
       <button className='md:hidden text-3xl text-white' onClick={toggleMenu}>
           <i className={`ri-menu-line text-3xl ${isMenuOpen ? 'hidden' : 'block'}`}></i>

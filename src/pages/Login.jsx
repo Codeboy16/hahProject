@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../public/images/logo.png";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Login({ login }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State for password visibility
+
+  //autho) Api Data
+  const { loginWithRedirect } = useAuth0();
 
   useEffect(() => {
     document.title = "Login";
@@ -95,7 +99,8 @@ function Login({ login }) {
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <button type="submit" className='btn btn-primary my-2'>Submit</button>
           </form>
-          <div className='text-center mt-6'>
+          <div className='text-center mt-3'>
+            <button onClick={() => loginWithRedirect()} className="btn btn-primary">Login With Google</button>
             <p className='text-gray-600 text-sm'>
               Don't have an account?
               <Link to='/signup' className='text-blue-600 hover:underline'>
