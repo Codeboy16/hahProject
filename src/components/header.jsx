@@ -6,7 +6,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 function Header(){
   //Auth0 api
   const { user, isAuthenticated,logout } = useAuth0();
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -25,22 +24,32 @@ function Header(){
         <input type='search' placeholder='Search' className='border-2 border-white rounded-lg my-auto px-3 py-1 outline-none'/>
         {
   isAuthenticated ? (
-    <>
-    <p className='px-2'>{user.name}</p>
-      <button className='btn bg-red-500 mx-2' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>Logout</button>
-    </>
+    <div className="flex items-center">
+      <p className='px-2 my-auto font-medium text-white'>{user.name}</p>
+      <button 
+        className='ml-4 bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 transition duration-300 ease-in-out' 
+        onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+      >
+        Logout
+      </button>
+    </div>
   ) : (
-    <>
-      <Link to='/login' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2 rounded-lg border'>
+    <div className="flex items-center">
+      <Link 
+        to='/login' 
+        className='noUnderline font-medium text-white py-2 px-4 mx-2 rounded-lg border hover:bg-blue-600 transition duration-300 ease-in-out'
+      >
         Login
       </Link>
-      <Link to='/signup' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-1 border rounded-lg'>
-        SignUp
+      <Link 
+        to='/signup' 
+        className='noUnderline font-medium text-white py-2 px-4 mx-1 rounded-lg border border-white hover:bg-blue-600 hover:text-blue-600 transition duration-300 ease-in-out'
+      >
+        Sign Up
       </Link>
-    </>
+    </div>
   )
 }
-
              
       </div>
       <button className='md:hidden text-3xl text-white' onClick={toggleMenu}>

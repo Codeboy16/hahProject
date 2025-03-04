@@ -21,12 +21,12 @@ const Poc = () => {
     { id: "12347", name: "Alice Johnson", email: "alice.johnson@example.com", position: "Frontend Developer", skills: ["React Native", "Java", "Swift"], resume: "link-to-resume.pdf" }
   ];
 
-  const handleAccept = (user) => {
-    alert(`Accepted ${user.name}'s application.`);
+  const handleAccept = (users) => {
+    alert(`Accepted ${users.name}'s application.`);
   };
 
   const handleReject = (user) => {
-    alert(`Rejected ${user.name}'s application.`);
+    alert(`Rejected ${users.name}'s application.`);
   };
 
   const handleLogout = () => {

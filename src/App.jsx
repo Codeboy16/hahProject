@@ -5,6 +5,8 @@ import SignUp from "./pages/SignUp";
 import Main from "./pages/main";
 import Poc from "./pages/Poc";
 import EmployerDashboard from "./pages/EmployerDashboard";
+import Error from "./pages/Error";
+import Vendor from "./pages/Vendor/Vendor";
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
@@ -24,6 +26,8 @@ function App() {
       <Route path="/signup" element={<SignUp/>}></Route>
       <Route path="/employee" element={<EmployerDashboard/>}></Route>
       <Route path="/poc" element={<Poc/>}></Route>
+      <Route path="/vendor/*" element={<Vendor/>}></Route>
+      <Route path="/*" element={<Error/>}></Route>
     </Routes>
     </BrowserRouter>
 

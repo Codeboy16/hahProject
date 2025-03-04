@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../public/images/logo.png";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import GoogleLogo from "../../public/images/googlelogo.png";
+import linkedinLogo from "../../public/images/linkedin.png";
+import GithubLogo from "../../public/images/github.png";
 function Login({ login }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -99,8 +101,18 @@ function Login({ login }) {
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <button type="submit" className='btn btn-primary my-2'>Submit</button>
           </form>
-          <div className='text-center mt-3'>
-            <button onClick={() => loginWithRedirect()} className="btn btn-primary">Login With Google</button>
+          <div className='text-center'>
+          <button 
+  onClick={() => loginWithRedirect()} 
+  className="flex items-center justify-center my-2 text-lg font-medium rounded-lg border border-gray-300 bg-white hover:bg-gray-100 transition duration-300 ease-in-out px-6 py-2 shadow-md hover:shadow-lg mx-auto"
+>
+  Login With
+  <span className='flex items-center ml-2'>
+    <img src={GoogleLogo} className='w-6 h-6 mx-1' alt="Google" />
+    <img src={linkedinLogo} className='w-6 h-6 mx-1' alt="LinkedIn" />
+    <img src={GithubLogo} className='w-9 h-9 mx-1' alt="GitHub" />
+  </span>
+</button>
             <p className='text-gray-600 text-sm'>
               Don't have an account?
               <Link to='/signup' className='text-blue-600 hover:underline'>

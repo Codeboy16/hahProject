@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
     </div>
     <div className='flex justify-around items-center bg-blue-500'>
-       <p className='py-4 text-white font-medium text-xl text-center'>©Copyright 2025 Hire & Hired
+       <p className='py-3 text-white font-medium text-xl text-center'>©Copyright 2025 Hire & Hired
        Scholiverse Educare Private Limited</p>
     </div>
     </>
