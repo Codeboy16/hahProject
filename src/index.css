@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .bgColor{
     background: linear-gradient(-135deg, #c850c0, #4158d0);
@@ -26,6 +27,17 @@
     font-weight: 500;
     font-style: normal;
   }
+  .roboto{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  .Round{
+    border-radius: 7px;
+  }
 ::placeholder{
     color: rgb(96, 95, 95);
     font-size: medium;
@@ -34,113 +46,6 @@
     width: 0px;
 }
 /* Soheb Css */
-/* .empDetails{
-    background-color:#0565c8;
-    padding: 20px;;
-    color: #ffffff;
-    font-size: larger;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.postBtn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-   
-}
-.jobPostBtns{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.jobPostBtns button{
-     padding: 10px;
-     border: 2px solid #eeeeee;
-     color: #ffffff;
-     border-radius: 10px;
-}
-.postBtn1{
-    background-color: green;
-    width: 100px;
-}
-.logout{
-    background-color: red;
-    padding: 10px;
-    color: #ffffff;
-    border-radius: 10px;
-}
-.cancelBtn{
-    background-color: red;
-    width: 100px;
-}
-.postBtn button{
-    background-color: orange;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 10px;
-
-}
-.body{
-    background-color: #fafafa;
-}
-.oldJob{
-    border: 2px solid #eeeeee;
-    gap: 20px;
-    border-radius: 10px;
-    padding: 20px;
-    height: 300px;
-    width: 300px;
-    background-color: #cbf2ff;
-}
- input{
-    border: 1px solid #eeeeee;
-    border-radius: 5px;
-    margin-left: 5px;
-    padding-left: 10px;
- }
-.pp{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.newJob{
-     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 3px solid #eeeeee;
-    padding: 50px;
-    border-radius: 10px;
-    background-color: #fffbf2;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-   
-}
-.newJob input{
-    border: 1px solid black;
-}
-.np{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.newJob{
-    display: none;
-}
-.oldJobs{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-} */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
   
   .dashboard-container {
     display: flex;

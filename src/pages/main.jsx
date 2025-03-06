@@ -47,7 +47,7 @@ function Main() {
           </div>
         </div>
         {/* sub_footer */}
-        <div className="bgFooter max-h-screen text-white mb-4">
+        <div className="bgFooter max-h-screen text-white">
        <div className='flex justify-around items-center py-5'>
           <div className=''>
            <h1 className='text-center md:text-left'>Empower your career with<br/> Hire & Hired today</h1>

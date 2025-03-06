@@ -26,11 +26,11 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg w-1/2 mx-auto mt-10">
-      <h1 className="text-3xl font-bold mb-6 text-center">My Profile</h1>
-      <img src={userProfile} alt="User  Profile" className="w-24 h-24 rounded-full mx-auto mb-4" />
+    <div className="bg-white p-8 rounded-lg shadow-lg w-1/2 mx-auto">
+      <h1 className="text-lg font-bold mb-2 text-center">My Profile</h1>
+      <img src={userProfile} alt="User  Profile" className="w-20 h-20 rounded-full mx-auto mb-2" />
       
-      <div className="mb-4">
+      <div className="mb-2">
         <label className="block text-gray-700">Name:</label>
         <input
           type="text"
@@ -42,7 +42,7 @@ const Profile = () => {
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-2">
         <label className="block text-gray-700">Email:</label>
         <input
           type="email"
@@ -54,7 +54,7 @@ const Profile = () => {
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-2">
         <label className="block text-gray-700">Phone:</label>
         <input
           type="tel"
@@ -66,7 +66,7 @@ const Profile = () => {
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-2">
         <label className="block text-gray-700">Location:</label>
         <input
           type="text"
@@ -78,7 +78,7 @@ const Profile = () => {
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-2">
         <label className="block text-gray-700">Company:</label>
         <input
           type="text"
@@ -90,7 +90,7 @@ const Profile = () => {
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-2">
         <label className="block text-gray-700">Address:</label>
         <input
           type="text"
@@ -106,14 +106,14 @@ const Profile = () => {
         {isEditing ? (
           <button
             onClick={toggleEdit}
-            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition duration-200"
+            className="bg-green-500 text-white py-2 px-10 rounded hover:bg-green-600 transition duration-200"
           >
             Save
           </button>
         ) : (
           <button
             onClick={toggleEdit}
-            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-200"
+            className="bg-blue-500 text-white py-2 px-10 rounded hover:bg-blue-600 transition duration-200"
           >
             Edit
           </button>

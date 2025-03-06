@@ -10,15 +10,10 @@ const Error = () => {
       </p>
       <a 
         href="/" 
-        className="mt-6 px-8 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 animate-fade-in no-underline"
+        className="mt-6 px-8 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition duration-300 animate-fade-in noUnderline font-bold"
       >
         Go Back Home
       </a>
-      <img 
-        src={cLogo} 
-        alt="404 Illustration" 
-        className="mt-8 w-1/2 max-w-md animate-pulse" 
-      />
     </div>
   );
 }
