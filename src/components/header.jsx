@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Clogo from '../../public/images/cLogo.png';
+import Logo from '/images/cLogo.png'
 import {Link} from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -12,16 +12,22 @@ function Header(){
   };
   return (
     <>
-    <div className='flex justify-between px-3 md:justify-around bg-blue-500 py-3'>
-      <div className='flex justify-between'>
-        <img src={Clogo} alt='logo' className='w-32'/>
-        <span className='hidden md:flex justify-items-center '>
+    <div className='flex justify-between px-3 md:justify-around bg-gray-800 py-3'>
+      <div className='flex justify-around'>
+        <div className='flex'>
+        <img src={Logo} alt='logo' className='w-14'/>
+        <p className='text-white my-auto text-xl font-bold relative right-2'>H&H</p>
+        </div>
+
+        <span className='hidden md:flex justify-items-center ml-4'>
             <a href='#' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2  rounded-lg border'>Internship</a>
-            <a href='#' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2  rounded-lg border'>Jobs</a>
+            <a href='#' className='noUnderline text-lg font-medium text-white py-1 px-4 my-auto mx-2  rounded-lg border'>
+              Jobs</a>
         </span>
       </div>
       <div className='md:flex justify-between hidden '>
-        <input type='search' placeholder='Search' className='border-2 border-white rounded-lg my-auto px-3 py-1 outline-none'/>
+        <input type='search' placeholder='Search..' className='border-2 border-gray-300 rounded-lg my-auto px-4 py-2 outline-none  focus:ring-blue-500 focus:border-blue-500 text-white placeholder:text-white'/>
+        <i className="ri-search-line text-white text-lg font-semibold relative right-8 my-auto"></i>
         {
   isAuthenticated ? (
     <div className="flex items-center">
@@ -37,15 +43,15 @@ function Header(){
     <div className="flex items-center">
       <Link 
         to='/login' 
-        className='noUnderline font-medium text-white py-2 px-4 mx-2 rounded-lg border hover:bg-blue-600 transition duration-300 ease-in-out'
+        className='noUnderline font-medium text-white py-2 px-4 mx-2 rounded-lg  bg-blue-600 transition duration-300 ease-in-out'
       >
-        Login
+       <i className="ri-user-line text-lg"></i> Login
       </Link>
       <Link 
         to='/signup' 
-        className='noUnderline font-medium text-white py-2 px-4 mx-1 rounded-lg border border-white hover:bg-blue-600 hover:text-blue-600 transition duration-300 ease-in-out'
+        className='noUnderline font-medium text-white py-2 px-4 mx-1 rounded-lg  border-white bg-green-600 hover:text-green-800 transition duration-300 ease-in-out'
       >
-        Sign Up
+        <i className="ri-shield-user-line px-1 text-lg"></i>SignUp
       </Link>
     </div>
   )

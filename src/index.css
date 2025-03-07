@@ -8,11 +8,6 @@
 .bgColor1{
     background: linear-gradient(-135deg, #352fe4, #bc2546);
 }
-.bgFooter{
-    background-image: url('../public/images/footer.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 .noUnderline{
     text-decoration: none;
 }

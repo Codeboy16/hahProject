@@ -4,6 +4,7 @@ import Footer from '../components/footer';
 import { Link } from 'react-router-dom';
 import Cards from '../components/cards';
 import Poster from '../../public/images/poster.jpg';
+import bgcLogo from '/images/bgLogo.png';
 function Main() {
       useEffect(() => { 
         document.title = "Hire And Hired";
@@ -46,20 +47,7 @@ function Main() {
             <p className='font-semibold text-xl text-gray-700'>learners</p>
           </div>
         </div>
-        {/* sub_footer */}
-        <div className="bgFooter max-h-screen text-white">
-       <div className='flex justify-around items-center py-5'>
-          <div className=''>
-           <h1 className='text-center md:text-left'>Empower your career with<br/> Hire & Hired today</h1>
-          </div>
-          <div>
-          <span className='hidden md:flex justify-items-center '>
-            <Link to='/' className='noUnderline text-lg font-medium text-white py-1 px-6 my-auto mx-2  rounded-lg border'>Internship</Link>
-            <Link to='/' className='noUnderline text-lg font-medium text-white py-1 px-6 my-auto mx-2  rounded-lg border'>Jobs</Link>
-        </span>
-          </div>
-       </div>
-        </div>
+        <img src={bgcLogo} className='img-fluid w-full md:max-h-72'/>
         <Footer/>
     </div>
   )

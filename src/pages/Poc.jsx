@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PocJob from '../components/pocJob';
 import Footer from '../components/footer';
-import { redirect } from 'react-router-dom';
-
+import { redirect,href, Link } from 'react-router-dom';
+import Alert from '@mui/material/Alert';
+import Logo from '/images/cLogo.png';
 const Poc = () => {
   useEffect(() => {   
     document.title = 'Point Of Contact';
   }, []);
-
+  const [fromSelected, setFormSelected] = useState(null);
   const [selectedPosition, setSelectedPosition] = useState('All');
   const users = [
     { id: "12345", name: "John Doe", email: "john.doe@example.com", position: "Frontend Developer", skills: ["JavaScript", "React", "CSS"], resume: "link-to-resume.pdf" },
@@ -20,20 +21,13 @@ const Poc = () => {
     { id: "12346", name: "Jane Smith", email: "jane.smith@example.com", position: "Backend Developer", skills: ["Node.js", "Express", "MongoDB"], resume: "link-to-resume.pdf" },
     { id: "12347", name: "Alice Johnson", email: "alice.johnson@example.com", position: "Frontend Developer", skills: ["React Native", "Java", "Swift"], resume: "link-to-resume.pdf" }
   ];
+  //Using UseEffect For Alert Message
+useEffect(()=>{
+   setTimeout(()=>{
+      setFormSelected(null);
+   },5000)
+  }, [fromSelected]);
 
-  const handleAccept = (users) => {
-    alert(`Accepted ${users.name}'s application.`);
-  };
-
-  const handleReject = (user) => {
-    alert(`Rejected ${users.name}'s application.`);
-  };
-
-  const handleLogout = () => {
-    alert('You have been logged out.');
-    redirect('/login');
-    // Add your logout logic here (e.g., redirect to login page)
-  };
 
   const filteredUsers = selectedPosition === 'All' ? users : users.filter(user => user.position === selectedPosition);
   // Calculate summary data based on the selected position
@@ -42,16 +36,19 @@ const Poc = () => {
   const rejectedApplications = totalApplications - acceptedApplications;
   return (
     <div className="bg-gray-50 min-h-screen">
-      <header className='bg-blue-500 text-white py-4 shadow-md flex justify-around items-center px-6'>
-        <h3 className='text-xl font-bold kanit-medium text-white'>Point Of Contact</h3>
+      <header className='bg-gray-800 text-white py-3 shadow-md flex justify-around items-center px-6'>
+        <span className='flex '>
+          <img src={Logo} className='w-13'/>
+        <h3 className='text-lg font-bold kanit-medium text-white my-auto'>Poc Section</h3>
+        </span>
+
         <div>
         <span className='mr-4 font-medium text-lg text-white kanit-medium'>John Doe</span>
-        <button 
-          onClick={handleLogout} 
-          className="Round bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-8 rounded-xl transition duration-200"
+        <Link to="/login"
+          className="Round bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-8 rounded-xl transition duration-200 noUnderline"
         >
           Logout
-        </button>
+        </Link>
         </div>
 
       </header>
@@ -102,12 +99,22 @@ const Poc = () => {
       {/* Show The Candidates Who Applied for the Job */}
       <div className="container flex flex-wrap justify-center mx-auto mt-6 mb-5">
         {filteredUsers.map((user, index) => (
-          <PocJob key={index} user={user} handleAccept={handleAccept} handleReject={handleReject} />
+          <PocJob key={index} user={user} setFormSelected={setFormSelected}/>
         ))}
       </div> 
+      {fromSelected !== null && (
+        <Alert 
+          variant="filled" 
+          severity={fromSelected === 1 ? "success" : "error"}
+          className="fixed bottom-4 right-4 z-50 px-12 animate-bounce ease-in-out"
+        >
+          {fromSelected === 1 ? 'This Form Is Successfully Accepted.' : 'This Form Is Rejected Successfully.'}
+        </Alert>
+      )
+      }
+     
       {/* Footer Section */}
         <Footer />
-  
     </div>
   );
 }

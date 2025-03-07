@@ -99,7 +99,7 @@ function Login({ login }) {
               </button>
             </div>
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <button type="submit" className='btn btn-primary my-2'>Submit</button>
+            <button type="submit" className='btn btn-primary my-2 font-medium text-2xl'>Login</button>
           </form>
           <div className='text-center'>
           <button 

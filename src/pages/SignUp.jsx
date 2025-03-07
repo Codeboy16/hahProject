@@ -88,7 +88,7 @@ function SignUp() {
               required
             >
               <option value="Employee">Employee</option>
-              <option value="Employer">Employer</option>
+              <option value="Employer">Vendor</option>
               <option value="Point of Contact">Point of Contact</option>
             </select>
             <input

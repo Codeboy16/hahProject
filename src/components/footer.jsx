@@ -1,8 +1,9 @@
 import React from 'react';
-import footer from '../../public/images/footer.png';
-import AppleStore from "../../public/images/apple_app_store.png";  
-import GoogleStore from "../../public/images/google_play_store.png";
+import footer from '/images/footer.png';
+import AppleStore from "/images/apple_app_store.png";  
+import GoogleStore from "/images/google_play_store.png";
 import { Link } from 'react-router-dom';
+import favLogo from '/images/cLogo.png';
 
 const Footer = () => {
   return (
@@ -47,6 +48,7 @@ const Footer = () => {
         <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
           <img src={GoogleStore} alt="Get it on Google Play" className="w-40 h-auto hover:scale-102 transition transform duration-500" />
         </a>
+        <img src={favLogo} className='w-14'/>
       </div>
 
       {/* Footer Bottom */}
