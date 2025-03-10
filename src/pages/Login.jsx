@@ -5,6 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import GoogleLogo from "../../public/images/googlelogo.png";
 import linkedinLogo from "../../public/images/linkedin.png";
 import GithubLogo from "../../public/images/github.png";
+import Alert from '@mui/material/Alert';
 function Login({ login }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -98,7 +99,7 @@ function Login({ login }) {
                 {showPassword ? <i class="ri-eye-off-line "></i> : <i class="ri-eye-line"></i>}
               </button>
             </div>
-            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {error && <Alert severity="error" className="fixed bottom-4 right-4 z-50 px-12 animate-bounce ease-in-out">{error}</Alert>}
             <button type="submit" className='btn btn-primary my-2 font-medium text-2xl'>Login</button>
           </form>
           <div className='text-center'>

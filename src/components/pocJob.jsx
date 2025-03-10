@@ -18,7 +18,7 @@ const PocJob = ({ user, setFormSelected }) => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex justify-center gap-2">
         <button 
           className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-white font-semibold py-2 px-8 rounded-lg shadow-lg hover:bg-green-700 Round roboto"
           onClick={()=>{setFormSelected(1)}}

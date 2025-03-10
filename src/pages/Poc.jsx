@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PocJob from '../components/pocJob';
 import Footer from '../components/footer';
-import { redirect,href, Link } from 'react-router-dom';
+import { redirect,href, Link, Links } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import Logo from '/images/cLogo.png';
+import axios from 'axios';
 const Poc = () => {
   useEffect(() => {   
     document.title = 'Point Of Contact';
@@ -28,6 +29,20 @@ useEffect(()=>{
    },5000)
   }, [fromSelected]);
 
+  //Fetch Api
+  // const [apiData, setApiData] = useState([]);
+  // useEffect(()=>{
+  //   const apiCall = async () => {
+  //     try{
+  //       const res = await axios.get("https://reqres.in/api/users?page=2");
+  //       setApiData(res.data.data);
+  //       console.log("Data fetched");
+  //     }catch(err){
+  //       console.log(err);
+  //     }
+  //   }
+  //    apiCall();
+  // },[]);
 
   const filteredUsers = selectedPosition === 'All' ? users : users.filter(user => user.position === selectedPosition);
   // Calculate summary data based on the selected position
@@ -43,7 +58,9 @@ useEffect(()=>{
         </span>
 
         <div>
-        <span className='mr-4 font-medium text-lg text-white kanit-medium'>John Doe</span>
+        <Link to="/search" className="ri-search-line text-xl px-2 cursor-pointer text-white noUnderline"></Link>
+        <span className='mr-4 font-medium text-lg text-white kanit-medium my-auto'>
+          John Doe</span>
         <Link to="/login"
           className="Round bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-8 rounded-xl transition duration-200 noUnderline"
         >
@@ -114,6 +131,7 @@ useEffect(()=>{
       }
      
       {/* Footer Section */}
+      
         <Footer />
     </div>
   );

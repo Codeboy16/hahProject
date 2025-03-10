@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../public/images/logo.png";
-
+import Alert from '@mui/material/Alert';
 function SignUp() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -100,7 +100,7 @@ function SignUp() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            {error && <p className="text-red-500 text-sm">{error}</p>}
+            {error && <Alert severity="error" className="fixed bottom-4 right-4 z-50 px-12 animate-bounce ease-in-out">{error}</Alert>}
             <button type="submit" className='btn btn-primary my-2'>Submit</button>
           </form>
           <div className='text-center mt-6'>
