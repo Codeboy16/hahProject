@@ -5,6 +5,7 @@ import { redirect,href, Link, Links } from 'react-router-dom';
 import Alert from '@mui/material/Alert';
 import Logo from '/images/cLogo.png';
 import axios from 'axios';
+import AuthHeader from '../components/AuthHeader';
 const Poc = () => {
   useEffect(() => {   
     document.title = 'Point Of Contact';
@@ -51,24 +52,7 @@ useEffect(()=>{
   const rejectedApplications = totalApplications - acceptedApplications;
   return (
     <div className="bg-gray-50 min-h-screen">
-      <header className='bg-gray-800 text-white py-3 shadow-md flex justify-around items-center px-6'>
-        <span className='flex '>
-          <img src={Logo} className='w-13'/>
-        <h3 className='text-lg font-bold kanit-medium text-white my-auto'>Poc Section</h3>
-        </span>
-
-        <div>
-        <Link to="/search" className="ri-search-line text-xl px-2 cursor-pointer text-white noUnderline"></Link>
-        <span className='mr-4 font-medium text-lg text-white kanit-medium my-auto'>
-          John Doe</span>
-        <Link to="/login"
-          className="Round bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-8 rounded-xl transition duration-200 noUnderline"
-        >
-          Logout
-        </Link>
-        </div>
-
-      </header>
+       <AuthHeader data="Poc"/>
       {/* Show Summary Data */}
       <div className="container mx-auto mt-6">
         <div className="bg-white rounded-lg border shadow-sm p-6">

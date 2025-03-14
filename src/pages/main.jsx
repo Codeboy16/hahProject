@@ -16,7 +16,7 @@ function Main() {
         <div className='h-full'>
           <h1 className='kanit-bold text-center pt-5 text-4xl'>Make your dream career a reality</h1>
           <h1 className='kanit-bold text-center pb-2 text-4xl'>Hire And Hired</h1>
-          <img src={Poster} alt="poster" className='w-1/2 h-1/2 mb-5 bg-cover mx-auto'/>
+          <img src={Poster} alt="poster" className='md:w-1/2 md:h-1/2 mb-5 bg-cover mx-auto img-fluid' loading='lazy'/>
 
         </div>
         {/* Cards Section */}
@@ -47,7 +47,7 @@ function Main() {
             <p className='font-semibold text-xl text-gray-700'>learners</p>
           </div>
         </div>
-        <img src={bgcLogo} className='img-fluid w-full md:max-h-72'/>
+        <img src={bgcLogo} className='img-fluid w-full max-h-96 md:max-h-72' loading='lazy'/>
         <Footer/>
     </div>
   )

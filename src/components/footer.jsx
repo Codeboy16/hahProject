@@ -43,12 +43,12 @@ const Footer = () => {
       {/* App Download Section */}
       <div className="flex flex-wrap justify-center items-center space-x-6 mt-8">
         <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-          <img src={AppleStore} alt="Download on the App Store" className="w-40 h-auto hover:scale-102 transition transform duration-500" />
+          <img src={AppleStore} alt="Download on the App Store" className="w-40 h-auto hover:scale-102 transition transform duration-500" loading='lazy'/>
         </a>
         <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-          <img src={GoogleStore} alt="Get it on Google Play" className="w-40 h-auto hover:scale-102 transition transform duration-500" />
+          <img src={GoogleStore} alt="Get it on Google Play" className="w-40 h-auto hover:scale-102 transition transform duration-500" loading='lazy'/>
         </a>
-        <img src={favLogo} className='w-14'/>
+        <img src={favLogo} className='w-14' loading='lazy'/>
       </div>
 
       {/* Footer Bottom */}

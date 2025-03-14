@@ -1,13 +1,15 @@
-import React,{useState} from "react";
+import React,{useState,lazy,Suspense} from "react";
 import { BrowserRouter, Routes,Route,Router,Navigate } from "react-router-dom";
-import  Login  from "./pages/Login";
-import SignUp from "./pages/SignUp";
-import Main from "./pages/main";
-import Poc from "./pages/Poc";
-import EmployerDashboard from "./pages/EmployerDashboard";
-import Error from "./pages/Error";
-import Vendor from "./pages/Vendor/Vendor";
-import Search from "./pages/Search";
+import CircularProgress from '@mui/material/CircularProgress';
+const Login = lazy(()=> import("./pages/Login"));
+const SignUp = lazy(()=> import("./pages/SignUp"));
+const Main = lazy(()=> import("./pages/main"));
+const Poc = lazy(()=> import("./pages/Poc"));
+const EmployerDashboard = lazy(()=> import("./pages/EmployerDashboard"));
+const Error = lazy(()=> import("./pages/Error"));
+const Vendor = lazy(()=> import("./pages/Vendor/Vendor"));
+const Search = lazy(()=> import("./pages/Search"));
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
@@ -21,6 +23,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <Suspense fallback={<div className="flex justify-center items-center w-full h-screen">
+      <CircularProgress size="6rem" color="primary" />
+    </div>}>
     <Routes>
       <Route path="/" element={<Main/>}></Route>
       <Route path="/login" element={<Login login={login}/>}></Route>
@@ -31,6 +36,7 @@ function App() {
       <Route path="/search/*" element={<Search/>}></Route>
       <Route path="/*" element={<Error/>}></Route>
     </Routes>
+    </Suspense>
     </BrowserRouter>
 
     </>

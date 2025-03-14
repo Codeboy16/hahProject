@@ -54,15 +54,16 @@ const EmployerDashboard = () => {
               <li><a href="#jobs" className="active">Job Posts</a></li>
               <li><a href="#profile">Profile</a></li>
               <li><a href="#settings">Settings</a></li>
+              <li><button onClick={postAJob} className="btn">Post New Job</button></li>
             </ul>
           </nav>
         </aside>
 
         <main className="main-content">
           <div className="empDetails">
-            <h2>Welcome, Mohammad Soheb</h2>
+            <h2>Welcome, Saniyaa Tripathi</h2>
             <p>Company: Google</p>
-            <p>Email: sohebmohammadd@gmail.com</p>
+            <p>Email: saniyaa123@gmail.com</p>
           </div>
 
           <div className="postBtn">

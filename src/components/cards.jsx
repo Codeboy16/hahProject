@@ -4,7 +4,7 @@ const Cards = ({img,name,location,time,stip}) => {
   return (
     <>
     <div className="card w-60 m-2">
-  <img src={img} className="card-img-top" alt="..."/>
+  <img src={img} className="card-img-top" alt="..." loading='lazy'/>
   <div className="card-body">
     <h5 className="card-title">{name}</h5>
     <span className='flex'>
@@ -19,7 +19,7 @@ const Cards = ({img,name,location,time,stip}) => {
     <i className="ri-money-rupee-circle-line pr-2 font-medium"></i>
     <p className='font-medium'>{stip}K</p>
     </span>
-    <a href="#" class="btn btn-primary px-5 font-medium my-2">Apply Now </a>
+    <a href="#" class="btn btn-primary md:px-5 font-medium my-2 ">Apply Now </a>
   </div>
 </div>
     </>

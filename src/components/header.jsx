@@ -14,10 +14,10 @@ function Header(){
     <>
     <div className='flex justify-between px-3 md:justify-around bg-gray-800 py-3'>
       <div className='flex justify-around'>
-        <div className='flex'>
+        <Link className='flex no-underline noUnderline' to="/">
         <img src={Logo} alt='logo' className='w-14'/>
-        <p className='text-white my-auto text-xl font-bold relative right-2'>H&H</p>
-        </div>
+        <p className='text-white my-auto text-xl font-bold relative right-2 noUnderline no-underline'>H&H</p>
+        </Link>
 
         <span className='hidden md:flex justify-items-center ml-4'>
             <a href='#' className='noUnderline text-lg font-medium text-white py-1 px-3 my-auto mx-2  rounded-lg border'>Internship</a>

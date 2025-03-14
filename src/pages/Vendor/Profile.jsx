@@ -26,7 +26,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg w-1/2 mx-auto">
+    <div className="bg-white p-8 rounded-lg shadow-lg w-full md:w-1/2 mx-auto">
       <h1 className="text-lg font-bold mb-2 text-center">My Profile</h1>
       <img src={userProfile} alt="User  Profile" className="w-20 h-20 rounded-full mx-auto mb-2" />
       

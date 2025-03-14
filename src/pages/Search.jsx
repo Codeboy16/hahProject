@@ -56,7 +56,7 @@ const Search = () => {
                     <span className=''>
                         <input
                             type="search"
-                            className="bg-white text-2xl w-[40rem] h-16 mt-4 p-4 rounded-full shadow-2xl ring-3 ring-green-500 focus:outline-none focus:ring-3 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
+                            className="bg-white text-2xl w-60 md:w-[40rem] h-16 mt-4 p-4 rounded-full shadow-2xl ring-3 ring-green-500 focus:outline-none focus:ring-3 focus:ring-blue-500 focus:border-transparent placeholder-gray-400"
                             placeholder="Search..."
                             onChange={(e) => setSearch(e.target.value)} // Set the search state as user types
                             value={search} // Bind the search state to the input field
@@ -69,7 +69,7 @@ const Search = () => {
                     {searchFound.length > 0 ? (
                         searchFound.map(item => (
                             <div key={item.id}>
-                                <p className='border m-1 p-2 rounded-md bg-gray-200'>{item.title}</p>
+                                <p className='border m-1 p-2 px-3 text-center rounded-md bg-gray-50 min-w-48 md:min-w-96 shadow-md'>{item.title+" "+item.id}</p>
                             </div>
                         ))
                     ) : (
