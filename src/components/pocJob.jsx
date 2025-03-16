@@ -6,7 +6,7 @@ const PocJob = ({ user, setFormSelected }) => {
      lg:max-w-lg bg-white rounded-lg shadow-xl p-6 mx-4 hover:scale-103 transform transition duration-500 ease-in-out">
       <div className="flex justify-between mb-4">
         <h2 className="text-2xl font-semibold text-gray-900 roboto">{`#${user.id}`}</h2>
-        <img src={UserProfile} className='w-12 h-12 mx-2'/>
+        <img src={UserProfile} className='w-12 h-12 mx-2' loading='lazy'/>
       </div>
       <div className="mb-6 space-y-2">
         <p className="text-gray-700 roboto"><strong className="font-medium ">Name:</strong> {user.name}</p>
@@ -18,9 +18,9 @@ const PocJob = ({ user, setFormSelected }) => {
         </p>
       </div>
 
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center gap-1">
         <button 
-          className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-white font-semibold py-2 px-8 rounded-lg shadow-lg hover:bg-green-700 Round roboto"
+          className="bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-white font-semibold py-2 px-12 rounded-lg shadow-lg hover:bg-green-700 Round roboto"
           onClick={()=>{setFormSelected(1)}}
 
         >
@@ -28,7 +28,7 @@ const PocJob = ({ user, setFormSelected }) => {
           Accept
         </button>
         <button 
-          className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white font-semibold py-2 px-8 rounded-lg shadow-lg hover:bg-red-700 Round roboto"
+          className="bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white font-semibold py-2 px-12 rounded-lg shadow-lg hover:bg-red-700 Round roboto"
           onClick={()=>{setFormSelected(0)}}
         >
           Reject

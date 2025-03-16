@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/header';
+import Footer from "../components/footer";
 import axios from 'axios';
 
 const Search = () => {
@@ -44,7 +45,7 @@ const Search = () => {
     return (
         <>
             <Header />
-            <div className='container'>
+            <div className='container h-screen overflow-scroll'>
                 {/* Header with logo and title */}
                 <div className="container my-4 flex flex-col justify-center items-center rounded-lg p-6 mx-auto">
                     <span className="flex justify-center items-center space-x-2">
@@ -65,11 +66,11 @@ const Search = () => {
                 </div>
 
                 {/* Show the search results or a message if no data is found */}
-                <div className="max-h-max p-4 flex flex-col justify-center items-center">
+                <div className="min-h-40 p-2 flex flex-col justify-center items-center overflow-scroll ">
                     {searchFound.length > 0 ? (
                         searchFound.map(item => (
                             <div key={item.id}>
-                                <p className='border m-1 p-2 px-3 text-center rounded-md bg-gray-50 min-w-48 md:min-w-96 shadow-md'>{item.title+" "+item.id}</p>
+                                <p className='border m-1 p-2 px-3 text-center rounded-md bg-gray-50 min-w-48 md:min-w-96 shadow-md'>{item.title}</p>
                             </div>
                         ))
                     ) : (
@@ -77,6 +78,7 @@ const Search = () => {
                     )}
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };

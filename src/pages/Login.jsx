@@ -14,8 +14,8 @@ function Login({ login }) {
   const [showPassword, setShowPassword] = useState(false); // State for password visibility
 
   //autho) Api Data
-  const { loginWithRedirect } = useAuth0();
-
+  const { loginWithRedirect,user } = useAuth0();
+   console.log(user)
   useEffect(() => {
     document.title = "Login";
   }, []);
@@ -61,7 +61,7 @@ function Login({ login }) {
     <div className="bgColor1 h-screen w-full flex justify-center items-center">
       <div className="bg-white rounded-xl w-96 md:w-1/2 m-auto my-auto mt-20 flex justify-around p-5">
         <div className="my-auto hidden lg:flex">
-          <img src={logo} className="my-auto hidden lg:flex" alt="Logo" />
+          <img src={logo} className="my-auto hidden lg:flex" alt="Logo" loading="lazy"/>
         </div>
         <div className="">
           <h1 className="text-2xl font-bold">Login</h1>

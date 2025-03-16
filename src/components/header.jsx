@@ -32,8 +32,9 @@ function Header(){
   isAuthenticated ? (
     <div className="flex items-center">
       <p className='px-2 my-auto font-medium text-white'>{user.name}</p>
+      <img src={user.picture} className='w-10 px-1 rounded-full'/>
       <button 
-        className='ml-4 bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-red-700 transition duration-300 ease-in-out' 
+        className='ml-4 bg-red-600 text-white font-semibold py-2 px-4 rounded-2xl shadow-md hover:bg-red-700 transition duration-300 ease-in-out ' 
         onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
       >
         Logout

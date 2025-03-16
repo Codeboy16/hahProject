@@ -1,11 +1,11 @@
 // Vendor.js
 import React from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
-import Profile from './Profile'; // Create this component
+import Profile from '../../components/Profile'; // Create this component
 import Resume from './Resume'; // Create this component
 import AppliedJobs from './AppliedJob'; // Create this component
 import AuthHeader from '../../components/AuthHeader';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer';
 
 const Vendor = () => {
   return (

@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import PocJob from '../components/pocJob';
-import Footer from '../components/footer';
-import { redirect,href, Link, Links } from 'react-router-dom';
+import PocJob from '../../components/pocJob';
 import Alert from '@mui/material/Alert';
-import Logo from '/images/cLogo.png';
-import axios from 'axios';
-import AuthHeader from '../components/AuthHeader';
 const Poc = () => {
-  useEffect(() => {   
-    document.title = 'Point Of Contact';
-  }, []);
+
   const [fromSelected, setFormSelected] = useState(null);
   const [selectedPosition, setSelectedPosition] = useState('All');
   const users = [
@@ -29,30 +22,13 @@ useEffect(()=>{
       setFormSelected(null);
    },5000)
   }, [fromSelected]);
-
-  //Fetch Api
-  // const [apiData, setApiData] = useState([]);
-  // useEffect(()=>{
-  //   const apiCall = async () => {
-  //     try{
-  //       const res = await axios.get("https://reqres.in/api/users?page=2");
-  //       setApiData(res.data.data);
-  //       console.log("Data fetched");
-  //     }catch(err){
-  //       console.log(err);
-  //     }
-  //   }
-  //    apiCall();
-  // },[]);
-
   const filteredUsers = selectedPosition === 'All' ? users : users.filter(user => user.position === selectedPosition);
   // Calculate summary data based on the selected position
   const totalApplications = filteredUsers.length;
   const acceptedApplications = filteredUsers.filter(user => user.accepted).length;
   const rejectedApplications = totalApplications - acceptedApplications;
   return (
-    <div className="bg-gray-50 min-h-screen">
-       <AuthHeader data="Poc"/>
+    <div className="bg-gray-50 min-h-screen overflow-scroll">
       {/* Show Summary Data */}
       <div className="container mx-auto mt-6">
         <div className="bg-white rounded-lg border shadow-sm p-6">
@@ -113,10 +89,6 @@ useEffect(()=>{
         </Alert>
       )
       }
-     
-      {/* Footer Section */}
-      
-        <Footer />
     </div>
   );
 }

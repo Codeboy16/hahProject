@@ -1,6 +1,6 @@
 // Profile.js
 import React, { useState } from 'react';
-import userProfile from '../../../public/images/userProfile.png';
+import userProfile from '../../public/images/userProfile.png';
 
 const Profile = () => {
   // State to manage edit mode and user information
@@ -26,10 +26,9 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg w-full md:w-1/2 mx-auto">
-      <h1 className="text-lg font-bold mb-2 text-center">My Profile</h1>
+    <div className="bg-white p-8 rounded-lg shadow-lg w-full lg:w-1/2 mx-auto">
+      <h2 className="text-lg font-bold mb-2 text-center">My Profile</h2>
       <img src={userProfile} alt="User  Profile" className="w-20 h-20 rounded-full mx-auto mb-2" />
-      
       <div className="mb-2">
         <label className="block text-gray-700">Name:</label>
         <input
@@ -106,14 +105,14 @@ const Profile = () => {
         {isEditing ? (
           <button
             onClick={toggleEdit}
-            className="bg-green-500 text-white py-2 px-10 rounded hover:bg-green-600 transition duration-200"
+            className="bg-green-500 text-white py-2 px-20 font-medium text-xl rounded hover:bg-green-600 transition duration-200"
           >
             Save
           </button>
         ) : (
           <button
             onClick={toggleEdit}
-            className="bg-blue-500 text-white py-2 px-10 rounded hover:bg-blue-600 transition duration-200"
+            className="bg-blue-500 text-white py-2 px-20 font-medium text-xl rounded hover:bg-blue-600 transition duration-200"
           >
             Edit
           </button>

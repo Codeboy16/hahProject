@@ -62,7 +62,7 @@ function SignUp() {
     <div className="bgColor h-screen w-full flex justify-center items-center">
       <div className="bg-white rounded-xl w-96 md:w-1/2 m-auto my-auto mt-20 flex justify-around p-4">
         <div className="my-auto hidden lg:flex">
-          <img src={logo} className="my-auto hidden lg:flex" />
+          <img src={logo} className="my-auto hidden lg:flex" loading="lazy"/>
         </div>
         <div className="">
           <h1 className="text-2xl font-bold">SignUp</h1>

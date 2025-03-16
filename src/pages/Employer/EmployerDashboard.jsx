@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import '../index.css'; 
-import Footer from '../components/footer';
+import '../../index.css'; 
+import Footer from '../../components/footer';
+import AuthHeader from '../../components/AuthHeader';
+import { Link } from 'react-router-dom';
 
 const EmployerDashboard = () => {
   const [jobs, setJobs] = useState([
@@ -42,17 +44,17 @@ const EmployerDashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <header className="header">
-        <h1 className="header-title">Employer Dashboard</h1>
+      {/* <header className=" flex justify-around bg-gray-800 text-white py-3">
+        <h1 className="header-title my-auto">Employer Dashboard</h1>
         <button className="logout">Logout</button>
-      </header>
-
+      </header> */}
+       <AuthHeader data="Employee"/>
       <div className="dashboard-content">
         <aside className="sidebar">
           <nav>
             <ul>
               <li><a href="#jobs" className="active">Job Posts</a></li>
-              <li><a href="#profile">Profile</a></li>
+              <li><Link to="/profile">Profile</Link></li>
               <li><a href="#settings">Settings</a></li>
               <li><button onClick={postAJob} className="btn">Post New Job</button></li>
             </ul>
